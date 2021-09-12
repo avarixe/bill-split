@@ -8,17 +8,17 @@
 
 		
 
-		<link rel="modulepreload" href="/_app/start-2f9b8754.js">
-		<link rel="modulepreload" href="/_app/chunks/vendor-91424fc8.js">
-		<link rel="modulepreload" href="/_app/layout.svelte-cb1bba68.js">
-		<link rel="modulepreload" href="/_app/pages/index.svelte-f2037cce.js">
-		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
+		<link rel="modulepreload" href="/bill-split/internal/start-f34a2c67.js">
+		<link rel="modulepreload" href="/bill-split/internal/chunks/vendor-91424fc8.js">
+		<link rel="modulepreload" href="/bill-split/internal/layout.svelte-cb1bba68.js">
+		<link rel="modulepreload" href="/bill-split/internal/pages/index.svelte-f2037cce.js">
+		<link rel="stylesheet" href="/bill-split/internal/assets/start-61d1577b.css">
 
 		<script type="module">
-			import { start } from "/_app/start-2f9b8754.js";
+			import { start } from "/bill-split/internal/start-f34a2c67.js";
 			start({
 				target: document.querySelector("#svelte"),
-				paths: {"base":"","assets":""},
+				paths: {"base":"/bill-split","assets":""},
 				session: {},
 				host: location.host,
 				route: true,
@@ -28,8 +28,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/_app/layout.svelte-cb1bba68.js"),
-						import("/_app/pages/index.svelte-f2037cce.js")
+						import("/bill-split/internal/layout.svelte-cb1bba68.js"),
+						import("/bill-split/internal/pages/index.svelte-f2037cce.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant

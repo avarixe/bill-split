@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>BillSplit</title>
+
+		
+
+		<link rel="modulepreload" href="/_app/start-2f9b8754.js">
+		<link rel="modulepreload" href="/_app/chunks/vendor-91424fc8.js">
+		<link rel="modulepreload" href="/_app/layout.svelte-cb1bba68.js">
+		<link rel="modulepreload" href="/_app/pages/index.svelte-f2037cce.js">
+		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
+
+		<script type="module">
+			import { start } from "/_app/start-2f9b8754.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":""},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/_app/layout.svelte-cb1bba68.js"),
+						import("/_app/pages/index.svelte-f2037cce.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+
+
+<h1>BillSplit</h1>
+
+<button>Add Item</button>
+
+<ul><li><input placeholder="What" value="">
+      <input placeholder="Name" value="">
+      <input placeholder="Amount" type="number">
+      <button>x</button>
+    </li></ul>
+
+<div><label for="subtotal">Subtotal:</label>
+  $0.00</div>
+<div><label for="total">Paid Amount:</label>
+  <input id="total" type="number"></div>
+
+<hr>
+
+<h4>Totals by Person</h4>
+<table><thead><tr><td>Name</td>
+      <td>Subtotal</td>
+      <td>Total</td></tr></thead>
+  <tbody><tr><td></td>
+        <td>$0.00</td>
+        <td>$0.00</td>
+      </tr></tbody></table>
+
+
+
+			
+		</div>
+	</body>
+</html>

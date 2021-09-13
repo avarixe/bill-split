@@ -8,14 +8,15 @@
 
 		
 
-		<link rel="modulepreload" href="/bill-split/internal/start-f34a2c67.js">
-		<link rel="modulepreload" href="/bill-split/internal/chunks/vendor-91424fc8.js">
-		<link rel="modulepreload" href="/bill-split/internal/layout.svelte-cb1bba68.js">
-		<link rel="modulepreload" href="/bill-split/internal/pages/index.svelte-f2037cce.js">
-		<link rel="stylesheet" href="/bill-split/internal/assets/start-61d1577b.css">
+		<link rel="modulepreload" href="/bill-split/internal/start-c81f49a5.js">
+		<link rel="modulepreload" href="/bill-split/internal/chunks/vendor-52470011.js">
+		<link rel="modulepreload" href="/bill-split/internal/layout.svelte-e204fa04.js">
+		<link rel="modulepreload" href="/bill-split/internal/pages/index.svelte-1099c8e5.js">
+		<link rel="stylesheet" href="/bill-split/internal/assets/start-45809b4a.css">
+		<link rel="stylesheet" href="/bill-split/internal/assets/pages/index.svelte-fa4d7b71.css">
 
 		<script type="module">
-			import { start } from "/bill-split/internal/start-f34a2c67.js";
+			import { start } from "/bill-split/internal/start-c81f49a5.js";
 			start({
 				target: document.querySelector("#svelte"),
 				paths: {"base":"/bill-split","assets":""},
@@ -28,8 +29,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/bill-split/internal/layout.svelte-cb1bba68.js"),
-						import("/bill-split/internal/pages/index.svelte-f2037cce.js")
+						import("/bill-split/internal/layout.svelte-e204fa04.js"),
+						import("/bill-split/internal/pages/index.svelte-1099c8e5.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -44,34 +45,37 @@
 	<body>
 		<div id="svelte">
 
+<div class="container mx-auto svelte-dghpyy"><h1 class="text-4xl mt-2 mb-4 svelte-dghpyy">BillSplit</h1>
 
+  <button class="border border-blue-600 rounded bg-blue-500 hover:bg-blue-600 active:ring ring-blue-700 text-light-400 py-1 px-2 outline-none svelte-dghpyy">Add Item </button>
 
+  <div class="table table-auto border-collapse w-full mb-2 svelte-dghpyy"><div class="table-header-group svelte-dghpyy"><div class="table-row border-b svelte-dghpyy"><div class="table-cell font-medium p-2 svelte-dghpyy">What</div>
+        <div class="table-cell font-medium p-2 svelte-dghpyy">Who</div>
+        <div class="table-cell font-medium p-2 svelte-dghpyy">Amount</div>
+        <div class="table-cell font-medium p-2 svelte-dghpyy"></div></div></div>
+    <div class="table-row-group svelte-dghpyy"><div class="table-row hover:bg-gray-100 focus:bg-gray-100 svelte-dghpyy"><div class="table-cell p-2 align-middle svelte-dghpyy"><input class="border rounded w-full py-1 px-2 focus:ring ring-blue-500 outline-none svelte-dghpyy" autofocus value=""></div>
+          <div class="table-cell p-2 align-middle svelte-dghpyy"><input class="border rounded w-full py-1 px-2 focus:ring ring-blue-500 outline-none svelte-dghpyy" placeholder="N/A" value=""></div>
+          <div class="table-cell p-2 align-middle svelte-dghpyy"><input class="border rounded w-full py-1 px-2 focus:ring ring-blue-500 outline-none svelte-dghpyy" type="number" min="0"></div>
+          <div class="table-cell p-2 text-center svelte-dghpyy"><button class="border border-red-600 rounded bg-red-500 hover:bg-red-600 active:ring ring-red-700 py-1 px-2 outline-none svelte-dghpyy"><svg class="fill-light-400 svelte-dghpyy" width="24px" height="24px"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path></svg>
+            </button></div>
+        </div></div></div>
 
-<h1>BillSplit</h1>
+  <div class="pt-2 svelte-dghpyy"><span class="font-medium svelte-dghpyy">Subtotal:</span>
+    <input value="0.00" class="border rounded py-1 px-2 focus:ring ring-blue-500 outline-none svelte-dghpyy" disabled type="number" min="0"></div>
+  <div class="py-2 svelte-dghpyy"><span class="font-medium svelte-dghpyy">Paid Amount:</span>
+    <input class="border rounded py-1 px-2 focus:ring ring-blue-500 outline-none svelte-dghpyy" type="number" min="0"></div>
 
-<button>Add Item</button>
+  <hr class="my-4 svelte-dghpyy">
 
-<ul><li><input placeholder="What" value="">
-      <input placeholder="Name" value="">
-      <input placeholder="Amount" type="number">
-      <button>x</button>
-    </li></ul>
-
-<div><label for="subtotal">Subtotal:</label>
-  $0.00</div>
-<div><label for="total">Paid Amount:</label>
-  <input id="total" type="number"></div>
-
-<hr>
-
-<h4>Totals by Person</h4>
-<table><thead><tr><td>Name</td>
-      <td>Subtotal</td>
-      <td>Total</td></tr></thead>
-  <tbody><tr><td></td>
-        <td>$0.00</td>
-        <td>$0.00</td>
-      </tr></tbody></table>
+  <h4 class="text-xl mb-2 svelte-dghpyy">Totals by Person</h4>
+  <div class="table table-auto border-collapse w-full svelte-dghpyy"><div class="table-header-group svelte-dghpyy"><div class="table-row border-b svelte-dghpyy"><div class="table-cell font-medium p-2 svelte-dghpyy">Name</div>
+        <div class="table-cell font-medium p-2 svelte-dghpyy">Subtotal</div>
+        <div class="table-cell font-medium p-2 svelte-dghpyy">Total</div></div></div>
+    <div class="table-row-group svelte-dghpyy"><div class="table-row hover:bg-gray-100 focus:bg-gray-100 svelte-dghpyy"><div class="table-cell p-2 svelte-dghpyy">N/A</div>
+          <div class="table-cell p-2 svelte-dghpyy">$0.00</div>
+          <div class="table-cell p-2 svelte-dghpyy">$0.00</div>
+        </div></div></div>
+</div>
 
 
 

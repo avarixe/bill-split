@@ -1,7 +1,11 @@
 /** @type {import('@sveltejs/kit').Config} */
+import { windi } from 'svelte-windicss-preprocess'
 import adapter from '@sveltejs/adapter-static'
 
 const config = {
+  preprocess: [
+    windi({})
+  ],
   kit: {
     // hydrate the <div id="svelte"> element in src/app.html
     target: '#svelte',

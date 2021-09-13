@@ -32,54 +32,119 @@
 
 <svelte:head>
   <title>BillSplit</title>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+  >
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+  >
 </svelte:head>
 
-<h1>BillSplit</h1>
+<div class="container">
+  <h1 class="fw-light py-2">BillSplit</h1>
 
-<button on:click={addItem}>Add Item</button>
+  <button
+    on:click={addItem}
+    class="btn btn-primary"
+  >
+    Add Item
+  </button>
 
-<ul>
-  {#each items as item, i}
-    <li>
-      <input placeholder="What" bind:value={item.what}>
-      <input placeholder="Name" bind:value={item.who}>
-      <input placeholder="Amount" bind:value={item.amt} type="number">
-      <button on:click={() => { removeItem(i) }}>x</button>
-    </li>
-  {/each}
-</ul>
-
-<div>
-  <label for="subtotal">Subtotal:</label>
-  ${subtotal.toFixed(2)}
-</div>
-<div>
-  <label for="total">Paid Amount:</label>
-  <input id="total" bind:value={total} type="number">
-</div>
-
-<hr>
-
-<h4>Totals by Person</h4>
-<table>
-  <thead>
-    <tr>
-      <td>Name</td>
-      <td>Subtotal</td>
-      <td>Total</td>
-    </tr>
-  </thead>
-  <tbody>
-    {#each totalsByNameList as { who, amt }}
+  <table class="table table-hover">
+    <thead>
       <tr>
-        <td>{who}</td>
-        <td>${amt.toFixed(2)}</td>
-        <td>${(amt * total / (subtotal || 1)).toFixed(2)}</td>
+        <th>What</th>
+        <th>Who</th>
+        <th>Amount</th>
+        <th></th>
       </tr>
-    {:else}
+    </thead>
+    <tbody>
+      {#each items as item, i}
+        <tr>
+          <td>
+            <input
+              bind:value={item.what}
+              class="form-control form-control-sm"
+            />
+          </td>
+          <td>
+            <input
+              bind:value={item.who}
+              placeholder="N/A"
+              class="form-control form-control-sm"
+            />
+          </td>
+          <td>
+            <div class="input-group input-group-sm">
+              <span class="input-group-text">$</span>
+              <input
+                bind:value={item.amt}
+                class="form-control"
+                type="number"
+                min={0}
+                step={2}
+              />
+            </div>
+          </td>
+          <td>
+            <button
+              on:click={() => { removeItem(i) }}
+              class="btn btn-sm btn-danger"
+            >
+              <i class="bi-x" />
+            </button>
+          </td>
+        </tr>
+      {/each}
+    </tbody>
+  </table>
+
+  <div>
+    <span class="form-label">Subtotal:</span>
+    <small class="form-text text-muted">${subtotal.toFixed(2)}</small>
+  </div>
+  <div class="d-flex align-items-center">
+    <span class="form-label mb-0" style="width: 10rem">Paid Amount:</span>
+    <div class="input-group input-group-sm">
+      <span class="input-group-text">$</span>
+      <input
+        bind:value={total}
+        id="total"
+        class="form-control"
+        type="number"
+        min={0}
+        step={2}
+      />
+    </div>
+  </div>
+
+  <hr>
+
+  <h4>Totals by Person</h4>
+
+  <table class="table table-hover">
+    <thead>
       <tr>
-        <td colspan="3">No Items Found!</td>
+        <td>Name</td>
+        <td>Subtotal</td>
+        <td>Total</td>
       </tr>
-    {/each}
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      {#each totalsByNameList as { who, amt }}
+        <tr>
+          <td>{who || 'N/A'}</td>
+          <td>${amt.toFixed(2)}</td>
+          <td>${(amt * total / (subtotal || 1)).toFixed(2)}</td>
+        </tr>
+      {:else}
+        <tr class="table-danger">
+          <td colspan="3">No Items Found!</td>
+        </tr>
+      {/each}
+    </tbody>
+  </table>
+</div>

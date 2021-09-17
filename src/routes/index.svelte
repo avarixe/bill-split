@@ -39,7 +39,7 @@
 <style windi:preflights:global windi:safelist:global>
 </style>
 
-<div class="container mx-auto">
+<div class="container mx-auto px-6">
   <h1 class="text-4xl mt-2 mb-4">BillSplit</h1>
 
   <button
@@ -76,12 +76,17 @@
             >
           </div>
           <div class="table-cell p-2 align-middle">
-            <input
-              bind:value={item.amt}
-              class="border rounded w-full py-1 px-2 focus:ring ring-blue-500 outline-none"
-              type="number"
-              min="0"
-            >
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none">
+                <span class="text-gray-500">$</span>
+              </div>
+              <input
+                bind:value={item.amt}
+                class="border rounded w-full py-1 pl-7 pr-2 focus:ring ring-blue-500 outline-none"
+                type="number"
+                min="0"
+              >
+            </div>
           </div>
           <div class="table-cell p-2 text-center">
             <button
@@ -100,22 +105,32 @@
 
   <div class="pt-2">
     <span class="font-medium">Subtotal:</span>
-    <input
-      value={subtotal.toFixed(2)}
-      class="border rounded py-1 px-2 focus:ring ring-blue-500 outline-none"
-      disabled
-      type="number"
-      min="0"
-    >
+    <div class="inline-block relative">
+      <div class="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none">
+        <span class="text-gray-500">$</span>
+      </div>
+      <input
+        value={subtotal.toLocaleString('en', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+        class="border rounded py-1 pl-7 pr-2 focus:ring ring-blue-500 outline-none"
+        disabled
+        type="number"
+        min="0"
+      >
+    </div>
   </div>
   <div class="py-2">
     <span class="font-medium">Paid Amount:</span>
-    <input
-      bind:value={total}
-      class="border rounded py-1 px-2 focus:ring ring-blue-500 outline-none"
-      type="number"
-      min="0"
-    >
+    <div class="inline-block relative">
+      <div class="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none">
+        <span class="text-gray-500">$</span>
+      </div>
+      <input
+        bind:value={total}
+        class="border rounded py-1 pl-7 pr-2 focus:ring ring-blue-500 outline-none"
+        type="number"
+        min="0"
+      >
+    </div>
   </div>
 
   <hr class="my-4">
@@ -132,9 +147,15 @@
     <div class="table-row-group">
       {#each totalsByNameList as { who, amt }}
         <div class="table-row hover:bg-gray-100 focus:bg-gray-100">
-          <div class="table-cell p-2">{who || 'N/A'}</div>
-          <div class="table-cell p-2">${amt.toFixed(2)}</div>
-          <div class="table-cell p-2">${(amt * total / (subtotal || 1)).toFixed(2)}</div>
+          <div class="table-cell p-2">
+            {who || 'N/A'}
+          </div>
+          <div class="table-cell p-2">
+            ${amt.toLocaleString('en', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+          </div>
+          <div class="table-cell p-2">
+            ${(amt * total / (subtotal || 1)).toLocaleString('en', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+          </div>
         </div>
       {:else}
         <div class="table-row bg-red-300">

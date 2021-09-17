@@ -8,15 +8,15 @@
 
 		
 
-		<link rel="modulepreload" href="/bill-split/internal/start-c81f49a5.js">
+		<link rel="modulepreload" href="/bill-split/internal/start-044c4c9a.js">
 		<link rel="modulepreload" href="/bill-split/internal/chunks/vendor-52470011.js">
 		<link rel="modulepreload" href="/bill-split/internal/layout.svelte-e204fa04.js">
-		<link rel="modulepreload" href="/bill-split/internal/pages/index.svelte-1099c8e5.js">
+		<link rel="modulepreload" href="/bill-split/internal/pages/index.svelte-36e91a7e.js">
 		<link rel="stylesheet" href="/bill-split/internal/assets/start-45809b4a.css">
-		<link rel="stylesheet" href="/bill-split/internal/assets/pages/index.svelte-fa4d7b71.css">
+		<link rel="stylesheet" href="/bill-split/internal/assets/pages/index.svelte-6e87018a.css">
 
 		<script type="module">
-			import { start } from "/bill-split/internal/start-c81f49a5.js";
+			import { start } from "/bill-split/internal/start-044c4c9a.js";
 			start({
 				target: document.querySelector("#svelte"),
 				paths: {"base":"/bill-split","assets":""},
@@ -30,7 +30,7 @@
 					error: null,
 					nodes: [
 						import("/bill-split/internal/layout.svelte-e204fa04.js"),
-						import("/bill-split/internal/pages/index.svelte-1099c8e5.js")
+						import("/bill-split/internal/pages/index.svelte-36e91a7e.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -45,35 +45,39 @@
 	<body>
 		<div id="svelte">
 
-<div class="container mx-auto svelte-dghpyy"><h1 class="text-4xl mt-2 mb-4 svelte-dghpyy">BillSplit</h1>
+<div class="container mx-auto px-6 svelte-sh9gag"><h1 class="text-4xl mt-2 mb-4 svelte-sh9gag">BillSplit</h1>
 
-  <button class="border border-blue-600 rounded bg-blue-500 hover:bg-blue-600 active:ring ring-blue-700 text-light-400 py-1 px-2 outline-none svelte-dghpyy">Add Item </button>
+  <button class="border border-blue-600 rounded bg-blue-500 hover:bg-blue-600 active:ring ring-blue-700 text-light-400 py-1 px-2 outline-none svelte-sh9gag">Add Item </button>
 
-  <div class="table table-auto border-collapse w-full mb-2 svelte-dghpyy"><div class="table-header-group svelte-dghpyy"><div class="table-row border-b svelte-dghpyy"><div class="table-cell font-medium p-2 svelte-dghpyy">What</div>
-        <div class="table-cell font-medium p-2 svelte-dghpyy">Who</div>
-        <div class="table-cell font-medium p-2 svelte-dghpyy">Amount</div>
-        <div class="table-cell font-medium p-2 svelte-dghpyy"></div></div></div>
-    <div class="table-row-group svelte-dghpyy"><div class="table-row hover:bg-gray-100 focus:bg-gray-100 svelte-dghpyy"><div class="table-cell p-2 align-middle svelte-dghpyy"><input class="border rounded w-full py-1 px-2 focus:ring ring-blue-500 outline-none svelte-dghpyy" autofocus value=""></div>
-          <div class="table-cell p-2 align-middle svelte-dghpyy"><input class="border rounded w-full py-1 px-2 focus:ring ring-blue-500 outline-none svelte-dghpyy" placeholder="N/A" value=""></div>
-          <div class="table-cell p-2 align-middle svelte-dghpyy"><input class="border rounded w-full py-1 px-2 focus:ring ring-blue-500 outline-none svelte-dghpyy" type="number" min="0"></div>
-          <div class="table-cell p-2 text-center svelte-dghpyy"><button class="border border-red-600 rounded bg-red-500 hover:bg-red-600 active:ring ring-red-700 py-1 px-2 outline-none svelte-dghpyy"><svg class="fill-light-400 svelte-dghpyy" width="24px" height="24px"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path></svg>
+  <div class="table table-auto border-collapse w-full mb-2 svelte-sh9gag"><div class="table-header-group svelte-sh9gag"><div class="table-row border-b svelte-sh9gag"><div class="table-cell font-medium p-2 svelte-sh9gag">What</div>
+        <div class="table-cell font-medium p-2 svelte-sh9gag">Who</div>
+        <div class="table-cell font-medium p-2 svelte-sh9gag">Amount</div>
+        <div class="table-cell font-medium p-2 svelte-sh9gag"></div></div></div>
+    <div class="table-row-group svelte-sh9gag"><div class="table-row hover:bg-gray-100 focus:bg-gray-100 svelte-sh9gag"><div class="table-cell p-2 align-middle svelte-sh9gag"><input class="border rounded w-full py-1 px-2 focus:ring ring-blue-500 outline-none svelte-sh9gag" autofocus value=""></div>
+          <div class="table-cell p-2 align-middle svelte-sh9gag"><input class="border rounded w-full py-1 px-2 focus:ring ring-blue-500 outline-none svelte-sh9gag" placeholder="N/A" value=""></div>
+          <div class="table-cell p-2 align-middle svelte-sh9gag"><div class="relative svelte-sh9gag"><div class="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none svelte-sh9gag"><span class="text-gray-500 svelte-sh9gag">$</span></div>
+              <input class="border rounded w-full py-1 pl-7 pr-2 focus:ring ring-blue-500 outline-none svelte-sh9gag" type="number" min="0">
+            </div></div>
+          <div class="table-cell p-2 text-center svelte-sh9gag"><button class="border border-red-600 rounded bg-red-500 hover:bg-red-600 active:ring ring-red-700 py-1 px-2 outline-none svelte-sh9gag"><svg class="fill-light-400 svelte-sh9gag" width="24px" height="24px"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path></svg>
             </button></div>
         </div></div></div>
 
-  <div class="pt-2 svelte-dghpyy"><span class="font-medium svelte-dghpyy">Subtotal:</span>
-    <input value="0.00" class="border rounded py-1 px-2 focus:ring ring-blue-500 outline-none svelte-dghpyy" disabled type="number" min="0"></div>
-  <div class="py-2 svelte-dghpyy"><span class="font-medium svelte-dghpyy">Paid Amount:</span>
-    <input class="border rounded py-1 px-2 focus:ring ring-blue-500 outline-none svelte-dghpyy" type="number" min="0"></div>
+  <div class="pt-2 svelte-sh9gag"><span class="font-medium svelte-sh9gag">Subtotal:</span>
+    <div class="inline-block relative svelte-sh9gag"><div class="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none svelte-sh9gag"><span class="text-gray-500 svelte-sh9gag">$</span></div>
+      <input value="0.00" class="border rounded py-1 pl-7 pr-2 focus:ring ring-blue-500 outline-none svelte-sh9gag" disabled type="number" min="0"></div></div>
+  <div class="py-2 svelte-sh9gag"><span class="font-medium svelte-sh9gag">Paid Amount:</span>
+    <div class="inline-block relative svelte-sh9gag"><div class="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none svelte-sh9gag"><span class="text-gray-500 svelte-sh9gag">$</span></div>
+      <input class="border rounded py-1 pl-7 pr-2 focus:ring ring-blue-500 outline-none svelte-sh9gag" type="number" min="0"></div></div>
 
-  <hr class="my-4 svelte-dghpyy">
+  <hr class="my-4 svelte-sh9gag">
 
-  <h4 class="text-xl mb-2 svelte-dghpyy">Totals by Person</h4>
-  <div class="table table-auto border-collapse w-full svelte-dghpyy"><div class="table-header-group svelte-dghpyy"><div class="table-row border-b svelte-dghpyy"><div class="table-cell font-medium p-2 svelte-dghpyy">Name</div>
-        <div class="table-cell font-medium p-2 svelte-dghpyy">Subtotal</div>
-        <div class="table-cell font-medium p-2 svelte-dghpyy">Total</div></div></div>
-    <div class="table-row-group svelte-dghpyy"><div class="table-row hover:bg-gray-100 focus:bg-gray-100 svelte-dghpyy"><div class="table-cell p-2 svelte-dghpyy">N/A</div>
-          <div class="table-cell p-2 svelte-dghpyy">$0.00</div>
-          <div class="table-cell p-2 svelte-dghpyy">$0.00</div>
+  <h4 class="text-xl mb-2 svelte-sh9gag">Totals by Person</h4>
+  <div class="table table-auto border-collapse w-full svelte-sh9gag"><div class="table-header-group svelte-sh9gag"><div class="table-row border-b svelte-sh9gag"><div class="table-cell font-medium p-2 svelte-sh9gag">Name</div>
+        <div class="table-cell font-medium p-2 svelte-sh9gag">Subtotal</div>
+        <div class="table-cell font-medium p-2 svelte-sh9gag">Total</div></div></div>
+    <div class="table-row-group svelte-sh9gag"><div class="table-row hover:bg-gray-100 focus:bg-gray-100 svelte-sh9gag"><div class="table-cell p-2 svelte-sh9gag">N/A</div>
+          <div class="table-cell p-2 svelte-sh9gag">$0.00</div>
+          <div class="table-cell p-2 svelte-sh9gag">$0.00</div>
         </div></div></div>
 </div>
 
